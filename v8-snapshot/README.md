@@ -22,7 +22,7 @@ A minimal Docker image based on Alpine Linux (~5MB) containing only a basic shel
 
 ## Snapshot NativeScript App
 1) [optional] follow the [`Local Build`](#local-build) section
-2) run a release build with --env.snapshot (TODO: maybe we need a flag for the Docker usage?)
+2) run a release build with --env.snapshot and --env.snapshotInDocker
 
 ## FAQ
 **Question:** How did we find the required snapshot tool dependencies?
