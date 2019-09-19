@@ -14,11 +14,11 @@ A minimal Docker image based on Alpine Linux (~5MB) containing only a basic shel
 ## Publish to Docker Hub
 1) follow the [`Local Build`](#local-build) section
 2) `$ docker login`
-3) `$ docker tag nativescript/v8-snapshot nativescript/v8-snapshot`
-4) `$ docker tag nativescript/v8-snapshot nativescript/v8-snapshot:<tag>`
+3) `$ docker tag nativescript/v8-snapshot nativescript/v8-snapshot` (**IMPORTANT**: this will update the **latest** tag and the users will get the new version. Do not publish *breaking changes* in this tag!)
+4) `$ docker tag nativescript/v8-snapshot nativescript/v8-snapshot:<tag>` 
 5) `$ docker push nativescript/v8-snapshot`
 
-> We add an additional tag in order to set a semver version for old Runtimes support and a better history. If you skip step (4), it will publish and override only the `latest` tag.
+> We add the additional semver tag for a better history and local testing. If you skip step (4), it will publish and override only the `latest` tag. **IMPORTANT**: When we update the **latest** tag, all users will get the new version. Do not publish *breaking changes* in this tag!
 
 ## Snapshot NativeScript App
 1) [optional] follow the [`Local Build`](#local-build) section
