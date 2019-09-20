@@ -35,6 +35,11 @@ A minimal Docker image based on Alpine Linux (~5MB) containing only a basic shel
 **Answer:** Releasing a new version of the V8 snapshot tools (this is done for each V8 update in the Runtime) could require new dependencies and an image update.
 
 ##
+**Question:** What is bin/xxd?
+
+**Answer:** xxd is a tool for hexdumps for optimizing the app size in combination with Android ABI split. It's copied from the vim package (https://github.com/vim/vim) along with it's license file. 
+
+##
 **Question:** Why don't we build the snapshots locally?
 
 **Answer:** The V8 snapshot tools are not available on Windows and starting from MacOS Catalina, the 32-bit processes are not supported on MAC. In addition, on Linux, you need several native dependencies in order to run the tools. Providing this Docker image, we have a cross-platform unified snapshots generation.
