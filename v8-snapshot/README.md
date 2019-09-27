@@ -25,7 +25,7 @@ A minimal Docker image based on Alpine Linux (~5MB) containing only a basic shel
 2) run a release build with --env.snapshot and --env.snapshotInDocker
 
 ## FAQ
-**Question:** How did we find the required snapshot tool dependencies?
+**Question:** How did we find the required snapshot tool dependencies (the content of `lib` and `lib64`)?
 
 **Answer:** The `mksnapshot` tool is a dynamic program and inspired by [this blog post](http://glaudiston.blogspot.com/2015/06/how-to-make-very-very-small-docker.html) and [this SO thread](https://askubuntu.com/questions/1023962/how-to-install-libc6i386-on-16-04-4-64bit), we were able to find the required dependencies on Ubuntu@18.04. In short, after the proper environment setup, download the linux V8 snapshot tools from `https://github.com/NativeScript/mksnapshot-tools/tree/master/mksnapshot-tools/<the-current-V8-version-used-in-NativeScript>/linux-x64` and run `$ ldd mksnapshot-arm64` and `$ ldd mksnapshot-ia32`, then just copy the required libraries in the `lib` folder. You could find the currently used V8 version by looking at [this file](https://github.com/NativeScript/android-runtime/blob/release/build-artifacts/project-template-gradle/settings.json#L2) ([here's a fallback permalink](https://github.com/NativeScript/android-runtime/blob/0d908c11741079d2286e7ed61ebe95bde45e4ba5/build-artifacts/project-template-gradle/settings.json#L2)).
 
